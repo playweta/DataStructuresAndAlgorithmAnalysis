@@ -9,13 +9,13 @@ import java.util.Set;
  * 第 91 场双周赛第一题
  * 6237. 不同的平均值数目
  */
-public class NumberDistinctAverages {
+public class Week_91_1NumberDistinctAverages {
 
 	int cur = 0;
 	Set<Double> arr = new HashSet<>();
 
 	public static void main(String[] args) {
-		System.out.println(new NumberDistinctAverages().distinctAverages(new int[]{1, 100}));
+		System.out.println(new Week_91_1NumberDistinctAverages().distinctAverages(new int[]{1, 100}));
 	}
 
 	public int distinctAverages(int[] nums) {
