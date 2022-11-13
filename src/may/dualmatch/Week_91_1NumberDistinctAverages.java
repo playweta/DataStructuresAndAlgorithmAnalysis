@@ -1,5 +1,6 @@
 package may.dualmatch;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,21 @@ public class Week_91_1NumberDistinctAverages {
 	Set<Double> arr = new HashSet<>();
 
 	public static void main(String[] args) {
-		System.out.println(new Week_91_1NumberDistinctAverages().distinctAverages(new int[]{1, 100}));
+		System.out.println(new Week_91_1NumberDistinctAverages().distinctAveragesSort(new int[]{1, 100}));
+	}
+
+	/**
+	 * set表 + 排序 + 双指针
+	 * @param nums
+	 * @return
+	 */
+	public int distinctAveragesSort(int[] nums) {
+		Arrays.sort(nums);
+		int i = 0, j = nums.length - 1;
+		while (i < j) {
+			arr.add((nums[i++] + nums[j--]) / 2.0);
+		}
+		return arr.size();
 	}
 
 	public int distinctAverages(int[] nums) {
@@ -24,8 +39,8 @@ public class Week_91_1NumberDistinctAverages {
 
 	public int sum(int[] nums) {
 		if (cur == nums.length) {
-          return arr.size();
-        }
+			return arr.size();
+		}
 		// 最大值
 		int a = Integer.MIN_VALUE;
 		// 最小值
