@@ -3,6 +3,7 @@ package may.leetcode;
 /**
  * @author liubr
  * @date 2022/11/19 11:27
+ * 1732. 找到最高海拔
  */
 public class Day009FindHighestAltitude {
 	public static void main(String[] args) {
