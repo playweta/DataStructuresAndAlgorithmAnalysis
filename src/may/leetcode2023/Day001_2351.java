@@ -21,4 +21,15 @@ public class Day001_2351 {
 			++i;
 		}
 	}
+	public char repeatedCharacterWei(String s) {
+		int mask = 0;
+		for (int i = 0; ; ++i) {
+			char c = s.charAt(i);
+			if ((mask >> (c - 'a') & 1) == 1) {
+				return c;
+			}
+			mask |= 1 << (c - 'a');
+		}
+	}
+
 }
