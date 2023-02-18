@@ -7,6 +7,14 @@ package may.leetcode2023;
  */
 public class Day006_2341 {
 	public int[] numberOfPairs(int[] nums) {
-        
+		int[] ints = new int[101];
+		for (int num : nums) {
+			ints[num]++;
+		}
+		int len = 0;
+		for (int i : ints) {
+			len += i / 2;
+		}
+		return new int[]{len, nums.length - len * 2};
 	}
 }
