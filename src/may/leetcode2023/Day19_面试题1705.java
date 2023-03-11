@@ -7,20 +7,25 @@ import java.util.HashMap;
  * @date 2023/03/11 08:58 上午
  * 面试题 17.05.  字母与数字
  */
-public class Day_面试题1705 {
+public class Day19_面试题1705 {
   public String[] findLongestSubarray(String[] array) {
     int n = array.length;
-    var s = new int[n + 1]; // 前缀和
-    for (int i = 0; i < n; ++i)
+    // 前缀和
+    var s = new int[n + 1];
+    for (int i = 0; i < n; ++i) {
       s[i + 1] = s[i] + (array[i].charAt(0) >> 6 & 1) * 2 - 1;
-
-    int begin = 0, end = 0; // 符合要求的子数组 [begin,end)
+    }
+    // 符合要求的子数组 [begin,end)
+    int begin = 0, end = 0;
     var first = new HashMap<Integer, Integer>();
     for (int i = 0; i <= n; ++i) {
       int j = first.getOrDefault(s[i], -1);
-      if (j < 0) // 首次遇到 s[i]
+      // 首次遇到 s[i]
+      if (j < 0)
+      {
         first.put(s[i], i);
-      else if (i - j > end - begin) { // 更长的子数组
+        // 更长的子数组
+      } else if (i - j > end - begin) {
         begin = j;
         end = i;
       }
